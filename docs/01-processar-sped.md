@@ -37,12 +37,18 @@ flowchart TD
     Open --> Read[2. Lê cada nota C100 que já existe]
     Read --> ReadXML[3. Para cada XML: lê a chave de 44 dígitos + fatura e parcelas]
     ReadXML --> Decide{A nota já está<br/>no SPED?}
-    Decide -->|Sim| Keep[4a. Mantém o C100 original<br/>e atualiza só C140/C141]
-    Decide -->|Não| New[4b. Cria bloco novo:<br/>C100 + C140 + C141 + C170 + C190]
+    Decide -->|Sim| Keep[4. Mantém o C100 original<br/>e atualiza só C140/C141]
+    Decide -->|Não: chave nova| Ignore[Ignorada neste SPED<br/>vai para o Banco de Parcelas ✅]
     Keep --> Recount[5. Recalcula os contadores<br/>C990, 9900, 9999]
-    New --> Recount
     Recount --> Save[6. Salva o SPED novo .txt]
 ```
+
+> **Importante:** o sistema **não cria nota nova** no SPED. Se o XML é de
+> uma NF que não está no `.txt` selecionado (chave de 44 dígitos inédita),
+> ela fica de fora do resultado com o aviso *"chave não encontrada no SPED,
+> ignorada"* — e é **guardada sozinha no Banco de Parcelas**, para entrar
+> automaticamente quando você processar o SPED do mês dela. Nada se perde.
+> ([Como funciona o banco](02-banco-de-parcelas.md))
 
 ### O que é cada bloco
 
