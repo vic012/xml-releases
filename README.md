@@ -10,6 +10,22 @@ Aqui você sempre encontra a versão mais nova do instalador para Windows.
 
 ---
 
+<details>
+<summary>📚 <strong>Manual das funções — clique para abrir o índice</strong></summary>
+
+<br>
+
+- [⚙️ Gerar o SPED com parcelas (função principal)](docs/01-processar-sped.md)
+- [📥 Banco de Parcelas — virada de mês](docs/02-banco-de-parcelas.md)
+- [🧩 Layouts C140/C141](docs/03-layouts-c140-c141.md)
+- [🔑 Licença e ativação](docs/04-licenca-e-ativacao.md)
+- [🔄 Atualizações automáticas](docs/05-atualizacoes.md)
+- [🩺 Diagnóstico e suporte (menu Logs)](docs/06-diagnostico-e-suporte.md)
+
+</details>
+
+---
+
 ## 1. Como atualizar pelo próprio aplicativo (recomendado)
 
 Você não precisa vir até aqui na maioria das vezes. O aplicativo avisa
